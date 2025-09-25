@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Dashboard Rest-Mex 2025 - Análisis por Polaridad</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8fafc;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .polarity-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            color: white;
+        }
+        .polarity-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .map-container {
+            width: 100%;
+            height: 70vh;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .stat-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 120px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #6b7280;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🗺️ Dashboard Rest-Mex 2025</h1>
+        <p>Análisis geográfico interactivo por polaridad de reseñas turísticas</p>
+    </div>
+    
+    <div class="controls">
+        <button class="polarity-btn" style="background-color: #DC2626;" onclick="loadMap(1)">
+            1 - Muy Negativa
+        </button>
+        <button class="polarity-btn" style="background-color: #F87171;" onclick="loadMap(2)">
+            2 - Negativa
+        </button>
+        <button class="polarity-btn" style="background-color: #6B7280;" onclick="loadMap(3)">
+            3 - Neutral
+        </button>
+        <button class="polarity-btn" style="background-color: #34D399;" onclick="loadMap(4)">
+            4 - Positiva
+        </button>
+        <button class="polarity-btn" style="background-color: #10B981;" onclick="loadMap(5)">
+            5 - Muy Positiva
+        </button>
+    </div>
+    
+    <div class="map-container">
+        <iframe id="mapFrame" src="mapa_default.html"></iframe>
+        <div id="loadingMsg" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #6b7280; display: none;">
+            <h3>🔄 Cargando mapa...</h3>
+            <p>Cambiando a nueva polaridad</p>
+        </div>
+        <div id="errorMsg" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #dc2626; display: none;">
+            <h3>⚠️ Error al cargar mapa</h3>
+            <p>Ejecuta primero: <code>python rest_mex_analysis.py</code></p>
+        </div>
+    </div>
+    
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number">208,051</div>
+            <div class="stat-label">Total Reseñas</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">19</div>
+            <div class="stat-label">Estados</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Tipos</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">1-5</div>
+            <div class="stat-label">Polaridades</div>
+        </div>
+    </div>
+    
+    <script>
+        function loadMap(polarity) {
+            const polarityNames = {
+                1: 'muy_negativa',
+                2: 'negativa', 
+                3: 'neutral',
+                4: 'positiva',
+                5: 'muy_positiva'
+            };
+            
+            const filename = `mapa_polaridad_${polarity}_${polarityNames[polarity]}.html`;
+            document.getElementById('mapFrame').src = filename;
+            
+            // Actualizar botones
+            document.querySelectorAll('.polarity-btn').forEach(btn => {
+                btn.style.opacity = '0.6';
+                btn.style.transform = 'scale(1)';
+            });
+            
+            event.target.style.opacity = '1';
+            event.target.style.transform = 'scale(1.05)';
+        }
+        
+        // Cargar mapa neutral por defecto
+        window.onload = function() {
+            document.querySelectorAll('.polarity-btn')[2].click();
+        };
+    </script>
+</body>
+</html>

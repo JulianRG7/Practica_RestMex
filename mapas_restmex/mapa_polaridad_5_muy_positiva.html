@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4fb607c25aac760430021c55db84ba64 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+        <div style="position: fixed; 
+                    top: 10px; right: 10px; width: 200px; height: auto; 
+                    background-color: white; border:2px solid grey; z-index:9999; 
+                    font-size:14px; padding: 10px; border-radius: 5px;
+                    box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+            <h4 style="margin: 0 0 10px 0;">Rest-Mex 2025</h4>
+            <p style="margin: 5px 0;"><strong>Polaridad 5</strong></p>
+            <p style="margin: 5px 0; color: #10B981;">Muy Positiva</p>
+            <hr style="margin: 10px 0;">
+            <p style="margin: 5px 0; font-size: 12px;">
+                <span style="color: #10B981;">●</span> Tamaño = Cantidad de reseñas<br>
+                <span style="color: #10B981;">●</span> Intensidad = Concentración relativa<br>
+                <span style="color: #10B981;">●</span> Total: 136,561 reseñas
+            </p>
+        </div>
+        
+    
+        <h2 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+                   background-color: rgba(255,255,255,0.8); padding: 10px; border-radius: 5px;
+                   margin: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+            Mapa México - Polaridad 5 (Muy Positiva)
+        </h2>
+        
+    
+            <div class="folium-map" id="map_4fb607c25aac760430021c55db84ba64" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4fb607c25aac760430021c55db84ba64 = L.map(
+                "map_4fb607c25aac760430021c55db84ba64",
+                {
+                    center: [23.6345, -102.5528],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": true,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7540f70a539f3ac77ba916d603d55557 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7540f70a539f3ac77ba916d603d55557.addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+            map_4fb607c25aac760430021c55db84ba64.fitBounds(
+                [[14.5388, -118.4662], [32.7186, -86.7104]],
+                {}
+            );
+        
+    
+            var circle_marker_36465bc3159cf890f462e142d0cf743c = L.circleMarker(
+                [21.1619, -86.8515],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35.0, "stroke": true, "weight": 2}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+        var popup_0eb195e41aaa28ed437aefaa352b703d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d710e0b94b55a0cc1127edb379adfab6 = $(`<div id="html_d710e0b94b55a0cc1127edb379adfab6" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif; width: 250px;">                 <h3 style="margin: 0 0 10px 0; color: #1f2937; border-bottom: 2px solid #10B981; padding-bottom: 5px;">                     Quintana Roo                 </h3>                 <div style="margin: 5px 0;">                     <strong>Polaridad 5 (Muy Positiva):</strong><br>                     <span style="color: #10B981; font-size: 18px; font-weight: bold;">                         60,085 reseñas                     </span>                 </div>                 <div style="margin: 5px 0;">                     <strong>Total del estado:</strong> 85,993 reseñas                 </div>                 <div style="margin: 5px 0;">                     <strong>Porcentaje:</strong> 69.9%                 </div>                 <hr style="margin: 10px 0; border: none; border-top: 1px solid #e5e7eb;">                 <div style="font-size: 12px; color: #6b7280;">                     <strong>Distribución por polaridad:</strong><br>             <span style="color: #DC2626;">●</span> 1: 1,734<br><span style="color: #F87171;">●</span> 2: 1,863<br><span style="color: #6B7280;">●</span> 3: 5,342<br><span style="color: #34D399;">●</span> 4: 16,969<br><span style="color: #10B981;">●</span> 5: 60,085<br></div></div></div>`)[0];
+                popup_0eb195e41aaa28ed437aefaa352b703d.setContent(html_d710e0b94b55a0cc1127edb379adfab6);
+            
+        
+
+        circle_marker_36465bc3159cf890f462e142d0cf743c.bindPopup(popup_0eb195e41aaa28ed437aefaa352b703d)
+        ;
+
+        
+    
+    
+            circle_marker_36465bc3159cf890f462e142d0cf743c.bindTooltip(
+                `<div>
+                     Quintana Roo: 60,085 reseñas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3f605a398f23306436fd48d01cd032c0 = L.marker(
+                [21.1619, -86.8515],
+                {
+}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+            var div_icon_fdd73ee3e303bc713dd3ad5548bc7b7f = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10px; color: #374151; font-weight: bold; text-shadow: 1px 1px 2px white;\"\u003eQuintana Roo\u003c/div\u003e",
+  "className": "state-label",
+});
+        
+    
+                marker_3f605a398f23306436fd48d01cd032c0.setIcon(div_icon_fdd73ee3e303bc713dd3ad5548bc7b7f);
+            
+    
+            var circle_marker_0eb8b2f0b6a38bcc040f75ceb0f569b7 = L.circleMarker(
+                [16.7569, -93.1292],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.8373879068691785, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 31.869395343458926, "stroke": true, "weight": 2}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+        var popup_e94197bfb25fd9834dab931dfb4e2b90 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1cf7f184f4351fe306db55bb4c715591 = $(`<div id="html_1cf7f184f4351fe306db55bb4c715591" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif; width: 250px;">                 <h3 style="margin: 0 0 10px 0; color: #1f2937; border-bottom: 2px solid #10B981; padding-bottom: 5px;">                     Chiapas                 </h3>                 <div style="margin: 5px 0;">                     <strong>Polaridad 5 (Muy Positiva):</strong><br>                     <span style="color: #10B981; font-size: 18px; font-weight: bold;">                         15,147 reseñas                     </span>                 </div>                 <div style="margin: 5px 0;">                     <strong>Total del estado:</strong> 23,532 reseñas                 </div>                 <div style="margin: 5px 0;">                     <strong>Porcentaje:</strong> 64.4%                 </div>                 <hr style="margin: 10px 0; border: none; border-top: 1px solid #e5e7eb;">                 <div style="font-size: 12px; color: #6b7280;">                     <strong>Distribución por polaridad:</strong><br>             <span style="color: #DC2626;">●</span> 1: 517<br><span style="color: #F87171;">●</span> 2: 601<br><span style="color: #6B7280;">●</span> 3: 1,909<br><span style="color: #34D399;">●</span> 4: 5,358<br><span style="color: #10B981;">●</span> 5: 15,147<br></div></div></div>`)[0];
+                popup_e94197bfb25fd9834dab931dfb4e2b90.setContent(html_1cf7f184f4351fe306db55bb4c715591);
+            
+        
+
+        circle_marker_0eb8b2f0b6a38bcc040f75ceb0f569b7.bindPopup(popup_e94197bfb25fd9834dab931dfb4e2b90)
+        ;
+
+        
+    
+    
+            circle_marker_0eb8b2f0b6a38bcc040f75ceb0f569b7.bindTooltip(
+                `<div>
+                     Chiapas: 15,147 reseñas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_25ea3adce5cc2fab716b38085b29d304 = L.marker(
+                [16.7569, -93.1292],
+                {
+}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+            var div_icon_fe3f20e838c7ede7830ff19377eb09a5 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10px; color: #374151; font-weight: bold; text-shadow: 1px 1px 2px white;\"\u003eChiapas\u003c/div\u003e",
+  "className": "state-label",
+});
+        
+    
+                marker_25ea3adce5cc2fab716b38085b29d304.setIcon(div_icon_fe3f20e838c7ede7830ff19377eb09a5);
+            
+    
+            var circle_marker_9b2dcb6a0652aae14656e585d31ba7f5 = L.circleMarker(
+                [19.4326, -99.6795],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.8299719874336193, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 31.498599371680967, "stroke": true, "weight": 2}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+        var popup_7cedb35de67c14be539faa5fcc3f4e89 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_58cf56289696d95ace0b50dcdd013c6b = $(`<div id="html_58cf56289696d95ace0b50dcdd013c6b" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif; width: 250px;">                 <h3 style="margin: 0 0 10px 0; color: #1f2937; border-bottom: 2px solid #10B981; padding-bottom: 5px;">                     Estado de Mexico                 </h3>                 <div style="margin: 5px 0;">                     <strong>Polaridad 5 (Muy Positiva):</strong><br>                     <span style="color: #10B981; font-size: 18px; font-weight: bold;">                         12,866 reseñas                     </span>                 </div>                 <div style="margin: 5px 0;">                     <strong>Total del estado:</strong> 19,439 reseñas                 </div>                 <div style="margin: 5px 0;">                     <strong>Porcentaje:</strong> 66.2%                 </div>                 <hr style="margin: 10px 0; border: none; border-top: 1px solid #e5e7eb;">                 <div style="font-size: 12px; color: #6b7280;">                     <strong>Distribución por polaridad:</strong><br>             <span style="color: #DC2626;">●</span> 1: 608<br><span style="color: #F87171;">●</span> 2: 557<br><span style="color: #6B7280;">●</span> 3: 1,491<br><span style="color: #34D399;">●</span> 4: 3,917<br><span style="color: #10B981;">●</span> 5: 12,866<br></div></div></div>`)[0];
+                popup_7cedb35de67c14be539faa5fcc3f4e89.setContent(html_58cf56289696d95ace0b50dcdd013c6b);
+            
+        
+
+        circle_marker_9b2dcb6a0652aae14656e585d31ba7f5.bindPopup(popup_7cedb35de67c14be539faa5fcc3f4e89)
+        ;
+
+        
+    
+    
+            circle_marker_9b2dcb6a0652aae14656e585d31ba7f5.bindTooltip(
+                `<div>
+                     Estado de Mexico: 12,866 reseñas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c613b9c289394778f2b6635c2fe93145 = L.marker(
+                [19.4326, -99.6795],
+                {
+}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+            var div_icon_098d14cb650f6b95f0f56e05a21e379d = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10px; color: #374151; font-weight: bold; text-shadow: 1px 1px 2px white;\"\u003eEstado de Mexico\u003c/div\u003e",
+  "className": "state-label",
+});
+        
+    
+                marker_c613b9c289394778f2b6635c2fe93145.setIcon(div_icon_098d14cb650f6b95f0f56e05a21e379d);
+            
+    
+            var circle_marker_69d1c5d0c7dca99dcc0d6a057b224c5c = L.circleMarker(
+                [20.9674, -89.5926],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.8133750668088628, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 30.668753340443143, "stroke": true, "weight": 2}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+        var popup_6a0b0eb55c45e4a6109eb4447645729d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7a8ef1b532e6ee6202a33b0195cc8866 = $(`<div id="html_7a8ef1b532e6ee6202a33b0195cc8866" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif; width: 250px;">                 <h3 style="margin: 0 0 10px 0; color: #1f2937; border-bottom: 2px solid #10B981; padding-bottom: 5px;">                     Yucatan                 </h3>                 <div style="margin: 5px 0;">                     <strong>Polaridad 5 (Muy Positiva):</strong><br>                     <span style="color: #10B981; font-size: 18px; font-weight: bold;">                         8,929 reseñas                     </span>                 </div>                 <div style="margin: 5px 0;">                     <strong>Total del estado:</strong> 13,678 reseñas                 </div>                 <div style="margin: 5px 0;">                     <strong>Porcentaje:</strong> 65.3%                 </div>                 <hr style="margin: 10px 0; border: none; border-top: 1px solid #e5e7eb;">                 <div style="font-size: 12px; color: #6b7280;">                     <strong>Distribución por polaridad:</strong><br>             <span style="color: #DC2626;">●</span> 1: 318<br><span style="color: #F87171;">●</span> 2: 311<br><span style="color: #6B7280;">●</span> 3: 1,017<br><span style="color: #34D399;">●</span> 4: 3,103<br><span style="color: #10B981;">●</span> 5: 8,929<br></div></div></div>`)[0];
+                popup_6a0b0eb55c45e4a6109eb4447645729d.setContent(html_7a8ef1b532e6ee6202a33b0195cc8866);
+            
+        
+
+        circle_marker_69d1c5d0c7dca99dcc0d6a057b224c5c.bindPopup(popup_6a0b0eb55c45e4a6109eb4447645729d)
+        ;
+
+        
+    
+    
+            circle_marker_69d1c5d0c7dca99dcc0d6a057b224c5c.bindTooltip(
+                `<div>
+                     Yucatan: 8,929 reseñas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_714ad08493b2ae9c4c8e3a9834b36086 = L.marker(
+                [20.9674, -89.5926],
+                {
+}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+            var div_icon_c219098dcdad2fed277b19fd056da015 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10px; color: #374151; font-weight: bold; text-shadow: 1px 1px 2px white;\"\u003eYucatan\u003c/div\u003e",
+  "className": "state-label",
+});
+        
+    
+                marker_714ad08493b2ae9c4c8e3a9834b36086.setIcon(div_icon_c219098dcdad2fed277b19fd056da015);
+            
+    
+            var circle_marker_0a85bc99d62644e0f0b68e5e56c26f71 = L.circleMarker(
+                [24.1442, -110.3005],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.8025303281549399, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 30.12651640774699, "stroke": true, "weight": 2}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+        var popup_3bc2886d5fcd70427450b1d910179844 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1ca010cd494e55aa80fbc5580c10d1ee = $(`<div id="html_1ca010cd494e55aa80fbc5580c10d1ee" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif; width: 250px;">                 <h3 style="margin: 0 0 10px 0; color: #1f2937; border-bottom: 2px solid #10B981; padding-bottom: 5px;">                     Baja California Sur                 </h3>                 <div style="margin: 5px 0;">                     <strong>Polaridad 5 (Muy Positiva):</strong><br>                     <span style="color: #10B981; font-size: 18px; font-weight: bold;">                         7,033 reseñas                     </span>                 </div>                 <div style="margin: 5px 0;">                     <strong>Total del estado:</strong> 10,125 reseñas                 </div>                 <div style="margin: 5px 0;">                     <strong>Porcentaje:</strong> 69.5%                 </div>                 <hr style="margin: 10px 0; border: none; border-top: 1px solid #e5e7eb;">                 <div style="font-size: 12px; color: #6b7280;">                     <strong>Distribución por polaridad:</strong><br>             <span style="color: #DC2626;">●</span> 1: 231<br><span style="color: #F87171;">●</span> 2: 207<br><span style="color: #6B7280;">●</span> 3: 623<br><span style="color: #34D399;">●</span> 4: 2,031<br><span style="color: #10B981;">●</span> 5: 7,033<br></div></div></div>`)[0];
+                popup_3bc2886d5fcd70427450b1d910179844.setContent(html_1ca010cd494e55aa80fbc5580c10d1ee);
+            
+        
+
+        circle_marker_0a85bc99d62644e0f0b68e5e56c26f71.bindPopup(popup_3bc2886d5fcd70427450b1d910179844)
+        ;
+
+        
+    
+    
+            circle_marker_0a85bc99d62644e0f0b68e5e56c26f71.bindTooltip(
+                `<div>
+                     Baja California Sur: 7,033 reseñas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c011e09b7b6305ffe35d73676c5f5e2a = L.marker(
+                [24.1442, -110.3005],
+                {
+}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+            var div_icon_b37e8858512c2aa7ad418c388e2a036b = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10px; color: #374151; font-weight: bold; text-shadow: 1px 1px 2px white;\"\u003eBaja California Sur\u003c/div\u003e",
+  "className": "state-label",
+});
+        
+    
+                marker_c011e09b7b6305ffe35d73676c5f5e2a.setIcon(div_icon_b37e8858512c2aa7ad418c388e2a036b);
+            
+    
+            var circle_marker_7d805360270ff16e1f90406633edf12f = L.circleMarker(
+                [20.6597, -103.3496],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.7983374730090984, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 29.91687365045492, "stroke": true, "weight": 2}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+        var popup_0333b7da31408582034da427879e691f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fd0b010ec798bc0e0a9cd22fbc680864 = $(`<div id="html_fd0b010ec798bc0e0a9cd22fbc680864" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif; width: 250px;">                 <h3 style="margin: 0 0 10px 0; color: #1f2937; border-bottom: 2px solid #10B981; padding-bottom: 5px;">                     Jalisco                 </h3>                 <div style="margin: 5px 0;">                     <strong>Polaridad 5 (Muy Positiva):</strong><br>                     <span style="color: #10B981; font-size: 18px; font-weight: bold;">                         6,413 reseñas                     </span>                 </div>                 <div style="margin: 5px 0;">                     <strong>Total del estado:</strong> 11,168 reseñas                 </div>                 <div style="margin: 5px 0;">                     <strong>Porcentaje:</strong> 57.4%                 </div>                 <hr style="margin: 10px 0; border: none; border-top: 1px solid #e5e7eb;">                 <div style="font-size: 12px; color: #6b7280;">                     <strong>Distribución por polaridad:</strong><br>             <span style="color: #DC2626;">●</span> 1: 479<br><span style="color: #F87171;">●</span> 2: 465<br><span style="color: #6B7280;">●</span> 3: 1,034<br><span style="color: #34D399;">●</span> 4: 2,777<br><span style="color: #10B981;">●</span> 5: 6,413<br></div></div></div>`)[0];
+                popup_0333b7da31408582034da427879e691f.setContent(html_fd0b010ec798bc0e0a9cd22fbc680864);
+            
+        
+
+        circle_marker_7d805360270ff16e1f90406633edf12f.bindPopup(popup_0333b7da31408582034da427879e691f)
+        ;
+
+        
+    
+    
+            circle_marker_7d805360270ff16e1f90406633edf12f.bindTooltip(
+                `<div>
+                     Jalisco: 6,413 reseñas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e29e5dfbcd54fafdb29a2cb40df6be2b = L.marker(
+                [20.6597, -103.3496],
+                {
+}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+            var div_icon_440dc3a890640e97c19d7f06c3aa0872 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10px; color: #374151; font-weight: bold; text-shadow: 1px 1px 2px white;\"\u003eJalisco\u003c/div\u003e",
+  "className": "state-label",
+});
+        
+    
+                marker_e29e5dfbcd54fafdb29a2cb40df6be2b.setIcon(div_icon_440dc3a890640e97c19d7f06c3aa0872);
+            
+    
+            var circle_marker_377105a8e3a5fce10bc460688cdccc37 = L.circleMarker(
+                [21.7514, -104.8455],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.7836645919249401, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 29.183229596247, "stroke": true, "weight": 2}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+        var popup_534b4cdae184b2f0d07beeffd9e90327 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_37d2fac7503e76271361567a5a4e1115 = $(`<div id="html_37d2fac7503e76271361567a5a4e1115" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif; width: 250px;">                 <h3 style="margin: 0 0 10px 0; color: #1f2937; border-bottom: 2px solid #10B981; padding-bottom: 5px;">                     Nayarit                 </h3>                 <div style="margin: 5px 0;">                     <strong>Polaridad 5 (Muy Positiva):</strong><br>                     <span style="color: #10B981; font-size: 18px; font-weight: bold;">                         4,643 reseñas                     </span>                 </div>                 <div style="margin: 5px 0;">                     <strong>Total del estado:</strong> 7,337 reseñas                 </div>                 <div style="margin: 5px 0;">                     <strong>Porcentaje:</strong> 63.3%                 </div>                 <hr style="margin: 10px 0; border: none; border-top: 1px solid #e5e7eb;">                 <div style="font-size: 12px; color: #6b7280;">                     <strong>Distribución por polaridad:</strong><br>             <span style="color: #DC2626;">●</span> 1: 174<br><span style="color: #F87171;">●</span> 2: 198<br><span style="color: #6B7280;">●</span> 3: 610<br><span style="color: #34D399;">●</span> 4: 1,712<br><span style="color: #10B981;">●</span> 5: 4,643<br></div></div></div>`)[0];
+                popup_534b4cdae184b2f0d07beeffd9e90327.setContent(html_37d2fac7503e76271361567a5a4e1115);
+            
+        
+
+        circle_marker_377105a8e3a5fce10bc460688cdccc37.bindPopup(popup_534b4cdae184b2f0d07beeffd9e90327)
+        ;
+
+        
+    
+    
+            circle_marker_377105a8e3a5fce10bc460688cdccc37.bindTooltip(
+                `<div>
+                     Nayarit: 4,643 reseñas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c45789e39de051b611fc318bac0216d3 = L.marker(
+                [21.7514, -104.8455],
+                {
+}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+            var div_icon_8c52a6215447f813b450939892968b80 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10px; color: #374151; font-weight: bold; text-shadow: 1px 1px 2px white;\"\u003eNayarit\u003c/div\u003e",
+  "className": "state-label",
+});
+        
+    
+                marker_c45789e39de051b611fc318bac0216d3.setIcon(div_icon_8c52a6215447f813b450939892968b80);
+            
+    
+            var circle_marker_9e108f675043cc9da349d0bf0861cb6b = L.circleMarker(
+                [19.0414, -98.2063],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.778685266450748, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 28.9342633225374, "stroke": true, "weight": 2}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+        var popup_cd1ab22b46a181b05e396ee4f268a42d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f9c33227924887e95ab3ace45083f6ed = $(`<div id="html_f9c33227924887e95ab3ace45083f6ed" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif; width: 250px;">                 <h3 style="margin: 0 0 10px 0; color: #1f2937; border-bottom: 2px solid #10B981; padding-bottom: 5px;">                     Puebla                 </h3>                 <div style="margin: 5px 0;">                     <strong>Polaridad 5 (Muy Positiva):</strong><br>                     <span style="color: #10B981; font-size: 18px; font-weight: bold;">                         4,161 reseñas                     </span>                 </div>                 <div style="margin: 5px 0;">                     <strong>Total del estado:</strong> 6,832 reseñas                 </div>                 <div style="margin: 5px 0;">                     <strong>Porcentaje:</strong> 60.9%                 </div>                 <hr style="margin: 10px 0; border: none; border-top: 1px solid #e5e7eb;">                 <div style="font-size: 12px; color: #6b7280;">                     <strong>Distribución por polaridad:</strong><br>             <span style="color: #DC2626;">●</span> 1: 214<br><span style="color: #F87171;">●</span> 2: 190<br><span style="color: #6B7280;">●</span> 3: 584<br><span style="color: #34D399;">●</span> 4: 1,683<br><span style="color: #10B981;">●</span> 5: 4,161<br></div></div></div>`)[0];
+                popup_cd1ab22b46a181b05e396ee4f268a42d.setContent(html_f9c33227924887e95ab3ace45083f6ed);
+            
+        
+
+        circle_marker_9e108f675043cc9da349d0bf0861cb6b.bindPopup(popup_cd1ab22b46a181b05e396ee4f268a42d)
+        ;
+
+        
+    
+    
+            circle_marker_9e108f675043cc9da349d0bf0861cb6b.bindTooltip(
+                `<div>
+                     Puebla: 4,161 reseñas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1b6e107b98069171406dd2c53e3e7ca9 = L.marker(
+                [19.0414, -98.2063],
+                {
+}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+            var div_icon_01ccaa1f8a5c3c545ade219eaf07d852 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10px; color: #374151; font-weight: bold; text-shadow: 1px 1px 2px white;\"\u003ePuebla\u003c/div\u003e",
+  "className": "state-label",
+});
+        
+    
+                marker_1b6e107b98069171406dd2c53e3e7ca9.setIcon(div_icon_01ccaa1f8a5c3c545ade219eaf07d852);
+            
+    
+            var circle_marker_b7859f6b5ed32d0bb94a49feb16bea60 = L.circleMarker(
+                [19.7007, -101.1884],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.7622684929043115, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 28.113424645215574, "stroke": true, "weight": 2}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+        var popup_6e7b3650d1131658c2cdf6e9dd1f5f16 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dfe3a9db499ae237b6075cefdb5db76a = $(`<div id="html_dfe3a9db499ae237b6075cefdb5db76a" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif; width: 250px;">                 <h3 style="margin: 0 0 10px 0; color: #1f2937; border-bottom: 2px solid #10B981; padding-bottom: 5px;">                     Michoacan                 </h3>                 <div style="margin: 5px 0;">                     <strong>Polaridad 5 (Muy Positiva):</strong><br>                     <span style="color: #10B981; font-size: 18px; font-weight: bold;">                         2,899 reseñas                     </span>                 </div>                 <div style="margin: 5px 0;">                     <strong>Total del estado:</strong> 4,454 reseñas                 </div>                 <div style="margin: 5px 0;">                     <strong>Porcentaje:</strong> 65.1%                 </div>                 <hr style="margin: 10px 0; border: none; border-top: 1px solid #e5e7eb;">                 <div style="font-size: 12px; color: #6b7280;">                     <strong>Distribución por polaridad:</strong><br>             <span style="color: #DC2626;">●</span> 1: 127<br><span style="color: #F87171;">●</span> 2: 129<br><span style="color: #6B7280;">●</span> 3: 349<br><span style="color: #34D399;">●</span> 4: 950<br><span style="color: #10B981;">●</span> 5: 2,899<br></div></div></div>`)[0];
+                popup_6e7b3650d1131658c2cdf6e9dd1f5f16.setContent(html_dfe3a9db499ae237b6075cefdb5db76a);
+            
+        
+
+        circle_marker_b7859f6b5ed32d0bb94a49feb16bea60.bindPopup(popup_6e7b3650d1131658c2cdf6e9dd1f5f16)
+        ;
+
+        
+    
+    
+            circle_marker_b7859f6b5ed32d0bb94a49feb16bea60.bindTooltip(
+                `<div>
+                     Michoacan: 2,899 reseñas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d1869d653a03e43794f9962e36cf89b3 = L.marker(
+                [19.7007, -101.1884],
+                {
+}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+            var div_icon_035361c14f708b07a44d9248731bf2dd = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10px; color: #374151; font-weight: bold; text-shadow: 1px 1px 2px white;\"\u003eMichoacan\u003c/div\u003e",
+  "className": "state-label",
+});
+        
+    
+                marker_d1869d653a03e43794f9962e36cf89b3.setIcon(div_icon_035361c14f708b07a44d9248731bf2dd);
+            
+    
+            var circle_marker_0d49b560611756d3b499bb2f28f3a6b3 = L.circleMarker(
+                [20.5888, -100.3899],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.759822125596671, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 27.991106279833545, "stroke": true, "weight": 2}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+        var popup_1c67e9896d0877919fb98a74a8cac127 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_24479348acddfbc610fcfc3fc4fd33c7 = $(`<div id="html_24479348acddfbc610fcfc3fc4fd33c7" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif; width: 250px;">                 <h3 style="margin: 0 0 10px 0; color: #1f2937; border-bottom: 2px solid #10B981; padding-bottom: 5px;">                     Queretaro                 </h3>                 <div style="margin: 5px 0;">                     <strong>Polaridad 5 (Muy Positiva):</strong><br>                     <span style="color: #10B981; font-size: 18px; font-weight: bold;">                         2,747 reseñas                     </span>                 </div>                 <div style="margin: 5px 0;">                     <strong>Total del estado:</strong> 4,879 reseñas                 </div>                 <div style="margin: 5px 0;">                     <strong>Porcentaje:</strong> 56.3%                 </div>                 <hr style="margin: 10px 0; border: none; border-top: 1px solid #e5e7eb;">                 <div style="font-size: 12px; color: #6b7280;">                     <strong>Distribución por polaridad:</strong><br>             <span style="color: #DC2626;">●</span> 1: 270<br><span style="color: #F87171;">●</span> 2: 217<br><span style="color: #6B7280;">●</span> 3: 522<br><span style="color: #34D399;">●</span> 4: 1,123<br><span style="color: #10B981;">●</span> 5: 2,747<br></div></div></div>`)[0];
+                popup_1c67e9896d0877919fb98a74a8cac127.setContent(html_24479348acddfbc610fcfc3fc4fd33c7);
+            
+        
+
+        circle_marker_0d49b560611756d3b499bb2f28f3a6b3.bindPopup(popup_1c67e9896d0877919fb98a74a8cac127)
+        ;
+
+        
+    
+    
+            circle_marker_0d49b560611756d3b499bb2f28f3a6b3.bindTooltip(
+                `<div>
+                     Queretaro: 2,747 reseñas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_cf773201aa58755c6c73cece6a9f2e78 = L.marker(
+                [20.5888, -100.3899],
+                {
+}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+            var div_icon_cfb1b8e3ab675d783c906207da7979e7 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10px; color: #374151; font-weight: bold; text-shadow: 1px 1px 2px white;\"\u003eQueretaro\u003c/div\u003e",
+  "className": "state-label",
+});
+        
+    
+                marker_cf773201aa58755c6c73cece6a9f2e78.setIcon(div_icon_cfb1b8e3ab675d783c906207da7979e7);
+            
+    
+            var circle_marker_a650a5a45ca47a4a4731c26498a55a73 = L.circleMarker(
+                [17.4391, -99.5451],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.7477528992810472, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 27.387644964052352, "stroke": true, "weight": 2}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+        var popup_8956d5e8df77fb43c6e52f76d4d4a594 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a74a7dfdf2cba8d370cee6e81164d6be = $(`<div id="html_a74a7dfdf2cba8d370cee6e81164d6be" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif; width: 250px;">                 <h3 style="margin: 0 0 10px 0; color: #1f2937; border-bottom: 2px solid #10B981; padding-bottom: 5px;">                     Guerrero                 </h3>                 <div style="margin: 5px 0;">                     <strong>Polaridad 5 (Muy Positiva):</strong><br>                     <span style="color: #10B981; font-size: 18px; font-weight: bold;">                         2,106 reseñas                     </span>                 </div>                 <div style="margin: 5px 0;">                     <strong>Total del estado:</strong> 4,201 reseñas                 </div>                 <div style="margin: 5px 0;">                     <strong>Porcentaje:</strong> 50.1%                 </div>                 <hr style="margin: 10px 0; border: none; border-top: 1px solid #e5e7eb;">                 <div style="font-size: 12px; color: #6b7280;">                     <strong>Distribución por polaridad:</strong><br>             <span style="color: #DC2626;">●</span> 1: 185<br><span style="color: #F87171;">●</span> 2: 165<br><span style="color: #6B7280;">●</span> 3: 496<br><span style="color: #34D399;">●</span> 4: 1,249<br><span style="color: #10B981;">●</span> 5: 2,106<br></div></div></div>`)[0];
+                popup_8956d5e8df77fb43c6e52f76d4d4a594.setContent(html_a74a7dfdf2cba8d370cee6e81164d6be);
+            
+        
+
+        circle_marker_a650a5a45ca47a4a4731c26498a55a73.bindPopup(popup_8956d5e8df77fb43c6e52f76d4d4a594)
+        ;
+
+        
+    
+    
+            circle_marker_a650a5a45ca47a4a4731c26498a55a73.bindTooltip(
+                `<div>
+                     Guerrero: 2,106 reseñas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4ecf1dff6e3d3c6229412f025f569b42 = L.marker(
+                [17.4391, -99.5451],
+                {
+}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+            var div_icon_d72839df323852abce142cddf06b584c = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10px; color: #374151; font-weight: bold; text-shadow: 1px 1px 2px white;\"\u003eGuerrero\u003c/div\u003e",
+  "className": "state-label",
+});
+        
+    
+                marker_4ecf1dff6e3d3c6229412f025f569b42.setIcon(div_icon_d72839df323852abce142cddf06b584c);
+            
+    
+            var circle_marker_25c506226dbf55fa77b10b5795a375cb = L.circleMarker(
+                [19.1738, -96.1342],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.744836084269682, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 27.241804213484098, "stroke": true, "weight": 2}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+        var popup_e4a92a6cbf11300239a15f3cc7c37312 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_32ada2c10a876a02400cde1b55585a9f = $(`<div id="html_32ada2c10a876a02400cde1b55585a9f" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif; width: 250px;">                 <h3 style="margin: 0 0 10px 0; color: #1f2937; border-bottom: 2px solid #10B981; padding-bottom: 5px;">                     Veracruz                 </h3>                 <div style="margin: 5px 0;">                     <strong>Polaridad 5 (Muy Positiva):</strong><br>                     <span style="color: #10B981; font-size: 18px; font-weight: bold;">                         1,975 reseñas                     </span>                 </div>                 <div style="margin: 5px 0;">                     <strong>Total del estado:</strong> 3,339 reseñas                 </div>                 <div style="margin: 5px 0;">                     <strong>Porcentaje:</strong> 59.1%                 </div>                 <hr style="margin: 10px 0; border: none; border-top: 1px solid #e5e7eb;">                 <div style="font-size: 12px; color: #6b7280;">                     <strong>Distribución por polaridad:</strong><br>             <span style="color: #DC2626;">●</span> 1: 118<br><span style="color: #F87171;">●</span> 2: 109<br><span style="color: #6B7280;">●</span> 3: 287<br><span style="color: #34D399;">●</span> 4: 850<br><span style="color: #10B981;">●</span> 5: 1,975<br></div></div></div>`)[0];
+                popup_e4a92a6cbf11300239a15f3cc7c37312.setContent(html_32ada2c10a876a02400cde1b55585a9f);
+            
+        
+
+        circle_marker_25c506226dbf55fa77b10b5795a375cb.bindPopup(popup_e4a92a6cbf11300239a15f3cc7c37312)
+        ;
+
+        
+    
+    
+            circle_marker_25c506226dbf55fa77b10b5795a375cb.bindTooltip(
+                `<div>
+                     Veracruz: 1,975 reseñas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c8db1cf96a04206fc46d29adc141821e = L.marker(
+                [19.1738, -96.1342],
+                {
+}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+            var div_icon_37a6e1bf467eab9e35ae08ae0f474bf6 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10px; color: #374151; font-weight: bold; text-shadow: 1px 1px 2px white;\"\u003eVeracruz\u003c/div\u003e",
+  "className": "state-label",
+});
+        
+    
+                marker_c8db1cf96a04206fc46d29adc141821e.setIcon(div_icon_37a6e1bf467eab9e35ae08ae0f474bf6);
+            
+    
+            var circle_marker_5e7e402b91a509fe604dd4ad3da36b30 = L.circleMarker(
+                [18.6813, -99.1013],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.7418175241371078, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 27.090876206855388, "stroke": true, "weight": 2}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+        var popup_706e1f7f2fe8c9a6dc6af42f9d98627f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_567aebadac7bc62cc02c1e0bac1594a6 = $(`<div id="html_567aebadac7bc62cc02c1e0bac1594a6" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif; width: 250px;">                 <h3 style="margin: 0 0 10px 0; color: #1f2937; border-bottom: 2px solid #10B981; padding-bottom: 5px;">                     Morelos                 </h3>                 <div style="margin: 5px 0;">                     <strong>Polaridad 5 (Muy Positiva):</strong><br>                     <span style="color: #10B981; font-size: 18px; font-weight: bold;">                         1,848 reseñas                     </span>                 </div>                 <div style="margin: 5px 0;">                     <strong>Total del estado:</strong> 3,445 reseñas                 </div>                 <div style="margin: 5px 0;">                     <strong>Porcentaje:</strong> 53.6%                 </div>                 <hr style="margin: 10px 0; border: none; border-top: 1px solid #e5e7eb;">                 <div style="font-size: 12px; color: #6b7280;">                     <strong>Distribución por polaridad:</strong><br>             <span style="color: #DC2626;">●</span> 1: 139<br><span style="color: #F87171;">●</span> 2: 141<br><span style="color: #6B7280;">●</span> 3: 357<br><span style="color: #34D399;">●</span> 4: 960<br><span style="color: #10B981;">●</span> 5: 1,848<br></div></div></div>`)[0];
+                popup_706e1f7f2fe8c9a6dc6af42f9d98627f.setContent(html_567aebadac7bc62cc02c1e0bac1594a6);
+            
+        
+
+        circle_marker_5e7e402b91a509fe604dd4ad3da36b30.bindPopup(popup_706e1f7f2fe8c9a6dc6af42f9d98627f)
+        ;
+
+        
+    
+    
+            circle_marker_5e7e402b91a509fe604dd4ad3da36b30.bindTooltip(
+                `<div>
+                     Morelos: 1,848 reseñas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6f155a651d0809bac77b3c78b37d6d0f = L.marker(
+                [18.6813, -99.1013],
+                {
+}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+            var div_icon_644a7eb30972bd731a515c2e6da5fc71 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10px; color: #374151; font-weight: bold; text-shadow: 1px 1px 2px white;\"\u003eMorelos\u003c/div\u003e",
+  "className": "state-label",
+});
+        
+    
+                marker_6f155a651d0809bac77b3c78b37d6d0f.setIcon(div_icon_644a7eb30972bd731a515c2e6da5fc71);
+            
+    
+            var circle_marker_a24296853c387a1f527d2a6a4cd1c3e7 = L.circleMarker(
+                [22.1565, -100.9855],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.731301562074872, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 26.5650781037436, "stroke": true, "weight": 2}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+        var popup_cc3e6cf28fcce198a8ec349f3dda248c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8a49cf9b64f9fcbceae234a1f88bfca0 = $(`<div id="html_8a49cf9b64f9fcbceae234a1f88bfca0" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif; width: 250px;">                 <h3 style="margin: 0 0 10px 0; color: #1f2937; border-bottom: 2px solid #10B981; padding-bottom: 5px;">                     San Luis Potosi                 </h3>                 <div style="margin: 5px 0;">                     <strong>Polaridad 5 (Muy Positiva):</strong><br>                     <span style="color: #10B981; font-size: 18px; font-weight: bold;">                         1,466 reseñas                     </span>                 </div>                 <div style="margin: 5px 0;">                     <strong>Total del estado:</strong> 2,218 reseñas                 </div>                 <div style="margin: 5px 0;">                     <strong>Porcentaje:</strong> 66.1%                 </div>                 <hr style="margin: 10px 0; border: none; border-top: 1px solid #e5e7eb;">                 <div style="font-size: 12px; color: #6b7280;">                     <strong>Distribución por polaridad:</strong><br>             <span style="color: #DC2626;">●</span> 1: 45<br><span style="color: #F87171;">●</span> 2: 54<br><span style="color: #6B7280;">●</span> 3: 164<br><span style="color: #34D399;">●</span> 4: 489<br><span style="color: #10B981;">●</span> 5: 1,466<br></div></div></div>`)[0];
+                popup_cc3e6cf28fcce198a8ec349f3dda248c.setContent(html_8a49cf9b64f9fcbceae234a1f88bfca0);
+            
+        
+
+        circle_marker_a24296853c387a1f527d2a6a4cd1c3e7.bindPopup(popup_cc3e6cf28fcce198a8ec349f3dda248c)
+        ;
+
+        
+    
+    
+            circle_marker_a24296853c387a1f527d2a6a4cd1c3e7.bindTooltip(
+                `<div>
+                     San Luis Potosi: 1,466 reseñas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f366e755de8343d701d7b24930ee91a0 = L.marker(
+                [22.1565, -100.9855],
+                {
+}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+            var div_icon_7455f4104b6431ea575e9031220e3bd7 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10px; color: #374151; font-weight: bold; text-shadow: 1px 1px 2px white;\"\u003eSan Luis Potosi\u003c/div\u003e",
+  "className": "state-label",
+});
+        
+    
+                marker_f366e755de8343d701d7b24930ee91a0.setIcon(div_icon_7455f4104b6431ea575e9031220e3bd7);
+            
+    
+            var circle_marker_0ff34dd02eb0ee0d33ee0a18d0830775 = L.circleMarker(
+                [17.0732, -96.7266],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.7152753311622535, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 25.76376655811267, "stroke": true, "weight": 2}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+        var popup_64ff2bc43e3334e3ae437ba36afe8876 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a8ba46b08160b6b6d8a55697287114d3 = $(`<div id="html_a8ba46b08160b6b6d8a55697287114d3" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif; width: 250px;">                 <h3 style="margin: 0 0 10px 0; color: #1f2937; border-bottom: 2px solid #10B981; padding-bottom: 5px;">                     Oaxaca                 </h3>                 <div style="margin: 5px 0;">                     <strong>Polaridad 5 (Muy Positiva):</strong><br>                     <span style="color: #10B981; font-size: 18px; font-weight: bold;">                         1,030 reseñas                     </span>                 </div>                 <div style="margin: 5px 0;">                     <strong>Total del estado:</strong> 1,466 reseñas                 </div>                 <div style="margin: 5px 0;">                     <strong>Porcentaje:</strong> 70.3%                 </div>                 <hr style="margin: 10px 0; border: none; border-top: 1px solid #e5e7eb;">                 <div style="font-size: 12px; color: #6b7280;">                     <strong>Distribución por polaridad:</strong><br>             <span style="color: #DC2626;">●</span> 1: 39<br><span style="color: #F87171;">●</span> 2: 39<br><span style="color: #6B7280;">●</span> 3: 85<br><span style="color: #34D399;">●</span> 4: 273<br><span style="color: #10B981;">●</span> 5: 1,030<br></div></div></div>`)[0];
+                popup_64ff2bc43e3334e3ae437ba36afe8876.setContent(html_a8ba46b08160b6b6d8a55697287114d3);
+            
+        
+
+        circle_marker_0ff34dd02eb0ee0d33ee0a18d0830775.bindPopup(popup_64ff2bc43e3334e3ae437ba36afe8876)
+        ;
+
+        
+    
+    
+            circle_marker_0ff34dd02eb0ee0d33ee0a18d0830775.bindTooltip(
+                `<div>
+                     Oaxaca: 1,030 reseñas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7329f7fe372545fd5d84e14906329798 = L.marker(
+                [17.0732, -96.7266],
+                {
+}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+            var div_icon_03d39cdaaf33e94f7d08de6d52fb049b = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10px; color: #374151; font-weight: bold; text-shadow: 1px 1px 2px white;\"\u003eOaxaca\u003c/div\u003e",
+  "className": "state-label",
+});
+        
+    
+                marker_7329f7fe372545fd5d84e14906329798.setIcon(div_icon_03d39cdaaf33e94f7d08de6d52fb049b);
+            
+    
+            var circle_marker_2b7ce2592b52dc590add7cba45fdbed5 = L.circleMarker(
+                [28.6353, -106.0889],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.7117958510051436, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 25.589792550257183, "stroke": true, "weight": 2}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+        var popup_e3847284ae7a10728ed5c2921bfbc36f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a70656043c880ea53eb6127afe5fee88 = $(`<div id="html_a70656043c880ea53eb6127afe5fee88" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif; width: 250px;">                 <h3 style="margin: 0 0 10px 0; color: #1f2937; border-bottom: 2px solid #10B981; padding-bottom: 5px;">                     Chihuahua                 </h3>                 <div style="margin: 5px 0;">                     <strong>Polaridad 5 (Muy Positiva):</strong><br>                     <span style="color: #10B981; font-size: 18px; font-weight: bold;">                         954 reseñas                     </span>                 </div>                 <div style="margin: 5px 0;">                     <strong>Total del estado:</strong> 1,786 reseñas                 </div>                 <div style="margin: 5px 0;">                     <strong>Porcentaje:</strong> 53.4%                 </div>                 <hr style="margin: 10px 0; border: none; border-top: 1px solid #e5e7eb;">                 <div style="font-size: 12px; color: #6b7280;">                     <strong>Distribución por polaridad:</strong><br>             <span style="color: #DC2626;">●</span> 1: 58<br><span style="color: #F87171;">●</span> 2: 83<br><span style="color: #6B7280;">●</span> 3: 202<br><span style="color: #34D399;">●</span> 4: 489<br><span style="color: #10B981;">●</span> 5: 954<br></div></div></div>`)[0];
+                popup_e3847284ae7a10728ed5c2921bfbc36f.setContent(html_a70656043c880ea53eb6127afe5fee88);
+            
+        
+
+        circle_marker_2b7ce2592b52dc590add7cba45fdbed5.bindPopup(popup_e3847284ae7a10728ed5c2921bfbc36f)
+        ;
+
+        
+    
+    
+            circle_marker_2b7ce2592b52dc590add7cba45fdbed5.bindTooltip(
+                `<div>
+                     Chihuahua: 954 reseñas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_21be1c053958750a3ff688403e23339e = L.marker(
+                [28.6353, -106.0889],
+                {
+}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+            var div_icon_10cf26a7b534fe569e959c209f84026d = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10px; color: #374151; font-weight: bold; text-shadow: 1px 1px 2px white;\"\u003eChihuahua\u003c/div\u003e",
+  "className": "state-label",
+});
+        
+    
+                marker_21be1c053958750a3ff688403e23339e.setIcon(div_icon_10cf26a7b534fe569e959c209f84026d);
+            
+    
+            var circle_marker_379859ee20f5946ea67fd1bff8d02ab1 = L.circleMarker(
+                [25.4232, -101.0053],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.7108341229478798, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 25.541706147393988, "stroke": true, "weight": 2}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+        var popup_b405c5f3b9c9ad4d20e169a4c24f3cf6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_762c0d6e13dca12b8557cf14a22e6923 = $(`<div id="html_762c0d6e13dca12b8557cf14a22e6923" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif; width: 250px;">                 <h3 style="margin: 0 0 10px 0; color: #1f2937; border-bottom: 2px solid #10B981; padding-bottom: 5px;">                     Coahuila                 </h3>                 <div style="margin: 5px 0;">                     <strong>Polaridad 5 (Muy Positiva):</strong><br>                     <span style="color: #10B981; font-size: 18px; font-weight: bold;">                         934 reseñas                     </span>                 </div>                 <div style="margin: 5px 0;">                     <strong>Total del estado:</strong> 1,741 reseñas                 </div>                 <div style="margin: 5px 0;">                     <strong>Porcentaje:</strong> 53.6%                 </div>                 <hr style="margin: 10px 0; border: none; border-top: 1px solid #e5e7eb;">                 <div style="font-size: 12px; color: #6b7280;">                     <strong>Distribución por polaridad:</strong><br>             <span style="color: #DC2626;">●</span> 1: 83<br><span style="color: #F87171;">●</span> 2: 88<br><span style="color: #6B7280;">●</span> 3: 181<br><span style="color: #34D399;">●</span> 4: 455<br><span style="color: #10B981;">●</span> 5: 934<br></div></div></div>`)[0];
+                popup_b405c5f3b9c9ad4d20e169a4c24f3cf6.setContent(html_762c0d6e13dca12b8557cf14a22e6923);
+            
+        
+
+        circle_marker_379859ee20f5946ea67fd1bff8d02ab1.bindPopup(popup_b405c5f3b9c9ad4d20e169a4c24f3cf6)
+        ;
+
+        
+    
+    
+            circle_marker_379859ee20f5946ea67fd1bff8d02ab1.bindTooltip(
+                `<div>
+                     Coahuila: 934 reseñas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f481c53d2bd652249ffaa707cd230933 = L.marker(
+                [25.4232, -101.0053],
+                {
+}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+            var div_icon_306c9f52ef4bc850adf40869eda11ecb = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10px; color: #374151; font-weight: bold; text-shadow: 1px 1px 2px white;\"\u003eCoahuila\u003c/div\u003e",
+  "className": "state-label",
+});
+        
+    
+                marker_f481c53d2bd652249ffaa707cd230933.setIcon(div_icon_306c9f52ef4bc850adf40869eda11ecb);
+            
+    
+            var circle_marker_3d8b5e2fa481deeabcbe6b2a4af6baa1 = L.circleMarker(
+                [20.0911, -98.7624],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.7024229066026944, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 25.121145330134716, "stroke": true, "weight": 2}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+        var popup_ab6de96383c0928a5e2e3cb8a3058be0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dccc20e056f08d6e4d0cdc811cc20c2c = $(`<div id="html_dccc20e056f08d6e4d0cdc811cc20c2c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif; width: 250px;">                 <h3 style="margin: 0 0 10px 0; color: #1f2937; border-bottom: 2px solid #10B981; padding-bottom: 5px;">                     Hidalgo                 </h3>                 <div style="margin: 5px 0;">                     <strong>Polaridad 5 (Muy Positiva):</strong><br>                     <span style="color: #10B981; font-size: 18px; font-weight: bold;">                         776 reseñas                     </span>                 </div>                 <div style="margin: 5px 0;">                     <strong>Total del estado:</strong> 1,509 reseñas                 </div>                 <div style="margin: 5px 0;">                     <strong>Porcentaje:</strong> 51.4%                 </div>                 <hr style="margin: 10px 0; border: none; border-top: 1px solid #e5e7eb;">                 <div style="font-size: 12px; color: #6b7280;">                     <strong>Distribución por polaridad:</strong><br>             <span style="color: #DC2626;">●</span> 1: 47<br><span style="color: #F87171;">●</span> 2: 53<br><span style="color: #6B7280;">●</span> 3: 193<br><span style="color: #34D399;">●</span> 4: 440<br><span style="color: #10B981;">●</span> 5: 776<br></div></div></div>`)[0];
+                popup_ab6de96383c0928a5e2e3cb8a3058be0.setContent(html_dccc20e056f08d6e4d0cdc811cc20c2c);
+            
+        
+
+        circle_marker_3d8b5e2fa481deeabcbe6b2a4af6baa1.bindPopup(popup_ab6de96383c0928a5e2e3cb8a3058be0)
+        ;
+
+        
+    
+    
+            circle_marker_3d8b5e2fa481deeabcbe6b2a4af6baa1.bindTooltip(
+                `<div>
+                     Hidalgo: 776 reseñas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7a2acc58fdb7591160e6712cb10d92ca = L.marker(
+                [20.0911, -98.7624],
+                {
+}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+            var div_icon_c1f8a7df4fe0f05622b138a42561e62f = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10px; color: #374151; font-weight: bold; text-shadow: 1px 1px 2px white;\"\u003eHidalgo\u003c/div\u003e",
+  "className": "state-label",
+});
+        
+    
+                marker_7a2acc58fdb7591160e6712cb10d92ca.setIcon(div_icon_c1f8a7df4fe0f05622b138a42561e62f);
+            
+    
+            var circle_marker_5d05f75e2d6417c5eaa8d0df7e97df0b = L.circleMarker(
+                [21.019, -101.2574],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10B981", "fillOpacity": 0.6867223993708123, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 24.336119968540615, "stroke": true, "weight": 2}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+        var popup_1c96b267125c9f406cfb77edf011882a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b9e468ae999dbf149e34b0e899153ee4 = $(`<div id="html_b9e468ae999dbf149e34b0e899153ee4" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif; width: 250px;">                 <h3 style="margin: 0 0 10px 0; color: #1f2937; border-bottom: 2px solid #10B981; padding-bottom: 5px;">                     Guanajuato                 </h3>                 <div style="margin: 5px 0;">                     <strong>Polaridad 5 (Muy Positiva):</strong><br>                     <span style="color: #10B981; font-size: 18px; font-weight: bold;">                         549 reseñas                     </span>                 </div>                 <div style="margin: 5px 0;">                     <strong>Total del estado:</strong> 909 reseñas                 </div>                 <div style="margin: 5px 0;">                     <strong>Porcentaje:</strong> 60.4%                 </div>                 <hr style="margin: 10px 0; border: none; border-top: 1px solid #e5e7eb;">                 <div style="font-size: 12px; color: #6b7280;">                     <strong>Distribución por polaridad:</strong><br>             <span style="color: #DC2626;">●</span> 1: 55<br><span style="color: #F87171;">●</span> 2: 26<br><span style="color: #6B7280;">●</span> 3: 73<br><span style="color: #34D399;">●</span> 4: 206<br><span style="color: #10B981;">●</span> 5: 549<br></div></div></div>`)[0];
+                popup_1c96b267125c9f406cfb77edf011882a.setContent(html_b9e468ae999dbf149e34b0e899153ee4);
+            
+        
+
+        circle_marker_5d05f75e2d6417c5eaa8d0df7e97df0b.bindPopup(popup_1c96b267125c9f406cfb77edf011882a)
+        ;
+
+        
+    
+    
+            circle_marker_5d05f75e2d6417c5eaa8d0df7e97df0b.bindTooltip(
+                `<div>
+                     Guanajuato: 549 reseñas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c87687c007fe5f003483cf66cf6109a1 = L.marker(
+                [21.019, -101.2574],
+                {
+}
+            ).addTo(map_4fb607c25aac760430021c55db84ba64);
+        
+    
+            var div_icon_e9f924a947973d668a6b1a279e6b337c = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10px; color: #374151; font-weight: bold; text-shadow: 1px 1px 2px white;\"\u003eGuanajuato\u003c/div\u003e",
+  "className": "state-label",
+});
+        
+    
+                marker_c87687c007fe5f003483cf66cf6109a1.setIcon(div_icon_e9f924a947973d668a6b1a279e6b337c);
+            
+</script>
+</html>
